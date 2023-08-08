@@ -16,4 +16,14 @@ public class UserLoginTest extends BaseTest {
         Assert.assertTrue(homePage.hasLogoutLink());
 
     }
+    @Test
+    public void loginShouldFailWithInvalidUser(){
+        CorpnetLoginPage loginPage=page.getInstance(CorpnetLoginPage.class)
+                .fillUsername("test")
+                .fillPassword("12423")
+                .clickLoginBtnToFail();
+        Assert.assertTrue(loginPage.hasError());
+
+
+    }
 }

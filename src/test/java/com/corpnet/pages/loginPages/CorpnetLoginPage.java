@@ -50,6 +50,6 @@ public class CorpnetLoginPage extends BasePage {
     }
 
     public boolean hasError() {
-        return getWebElements(By.className("error")).size() > 0;
+        return getWebElements(By.cssSelector("div[class='row'] label")).size() > 0;
     }
 }
