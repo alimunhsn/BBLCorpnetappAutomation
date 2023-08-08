@@ -34,16 +34,7 @@ public class CorpnetLoginPage extends BasePage {
         return this;
     }
 
-    public CorpnetLoginPage doLogin() {
-        return clickLoginBtnToFail();
-    }
-
-    public CorpnetLoginPage doLogin(String username) {
-        return fillUsername(username)
-                .clickLoginBtnToFail();
-    }
-
-    public HomePage doLogin(String username, String password) {
+      public HomePage doLogin(String username, String password) {
         return fillUsername(username)
                 .fillPassword(password)
                 .clickLoginBtn();
