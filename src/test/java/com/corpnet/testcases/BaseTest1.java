@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Properties;
 
-public class BaseTest {
-    WebDriver driver;
+public class BaseTest1 {
+    public WebDriver driver;
     private Properties properties;
     public Page page;
 
@@ -26,7 +26,7 @@ public class BaseTest {
     //   try {
     //    String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
     //  properties = new Properties();
-    public BaseTest() {
+    public BaseTest1() {
         try {
             String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\config.properties";
             properties = new Properties();
@@ -34,8 +34,6 @@ public class BaseTest {
 
             inputStream = new FileInputStream(filePath);
             properties.load(inputStream);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -47,42 +45,23 @@ public class BaseTest {
         String browserName = properties.getProperty("browserName");
         //String browserName="firefox";
 
-        if (Objects.equals(browserName, "chrome")) {
+        if (browserName.equals("chrome")) {
             //System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
-        } else if (Objects.equals(browserName, "firefox")) {
+
+        } else if (browserName.equals( "firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
 
-        } else if (Objects.equals(browserName, "chromeHeadless")) {
-            WebDriverManager.chromedriver().setup();
-
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless");
-            driver = new ChromeDriver(options);
-
-        } else if (Objects.equals(browserName, "firefoxHeadless")) {
-            WebDriverManager.firefoxdriver().setup();
-
-            FirefoxOptions options = new FirefoxOptions();
-            options.addArguments("--headless");
-            driver = new FirefoxDriver(options);
         } else {
             System.out.println("Please provide proper Browser Name");
         }
 
-        driver.get(properties.getProperty("baseUrl"));
+        driver.get("https://parabank.parasoft.com/parabank/index.htm");
         driver.manage().window().maximize();
         page = new BasePage(driver);
-    }
 
-    public String getOpsMakerUser() {
-        return properties.getProperty("OpsMakerUser");
-    }
-
-    public String getOpsMakerPass() {
-        return properties.getProperty("OpsMakerPass");
     }
 
 
