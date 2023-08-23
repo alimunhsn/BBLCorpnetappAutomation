@@ -85,6 +85,43 @@ public class BaseTest {
         return properties.getProperty("OpsMakerPass");
     }
 
+    public String getTranMCUser() {
+        return properties.getProperty("TranMCUser");
+    }
+
+    public String getTranMCUserPass() {
+        return properties.getProperty("TranMCUserPass");
+    }
+
+    public String getTranCompAppUser() {
+        return properties.getProperty("CompAppUser");
+    }
+
+    public String getTranCompAppUserPass() {
+        return properties.getProperty("CompAppUserPass");
+    }
+
+    public String getTransactionTracker() {
+        return properties.getProperty("transactionTracker");
+
+    }
+
+    public String getIFTSingleBulkFile() {
+        return properties.getProperty("IFTSingleBulk");
+
+    }
+    public String getIFTMultipleBulkFile() {
+        return properties.getProperty("IFTMultipleBulk");
+
+    }
+
+    public int getSelectAccount() {
+        return 0;
+
+        //  return properties.getProperty("selectAccount");
+
+    }
+
 
     @AfterMethod
     public void tearTown() {
