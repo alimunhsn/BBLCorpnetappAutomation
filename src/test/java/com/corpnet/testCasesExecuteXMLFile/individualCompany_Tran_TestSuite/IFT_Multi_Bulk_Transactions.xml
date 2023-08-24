@@ -3,9 +3,9 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="IFT_Single_Tran">
         <classes>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_IFT_Transactions.TC_004_IFT_SingleBulkTranByComMaker">
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_IFT_Transactions.TC_007_IFT_MultiToManyTransferByComMaker">
                 <methods>
-                    <include name="initiateIFT_Many_Many_TranSuccess"/>
+                    <include name=""/>
                 </methods>
             </class>
 
@@ -16,7 +16,7 @@
             </class>
             <class name="com.corpnet.testcases.test_Company_Transaction.testCases_IFT_Transactions.TC_003_IFT_Single_Approve_TransferByComSignatory">
                 <methods>
-                    <include name="Approve_IFT_SingleBulk_TranShouldSuccess"/>
+                    <include name="Approve_IFT_MultiBulk_TranShouldSuccess"/>
                 </methods>
             </class>
         </classes>

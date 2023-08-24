@@ -6,11 +6,11 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-public class TC_002_IFT_TransferByComChecker extends BaseTest {
+public class TC_008_IFT_Multi_TransferByComChecker extends BaseTest {
 
 
         @Test
-        public void authorizedIFT_Single_TranShouldSuccess(ITestContext context) throws InterruptedException {
+        public void authorizedIFT_Single_Bulk_TranShouldSuccess(ITestContext context) throws InterruptedException {
 
             String iftTranRef = (String) context.getAttribute("IftTrxReferenceNumber");
 

@@ -6,7 +6,7 @@ import com.corpnet.testcases.BaseTest;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-public class TC_005_IFT_MultiToManyTransferByComMaker extends BaseTest {
+public class TC_007_IFT_MultiToManyTransferByComMaker extends BaseTest {
     @Test
     public void initiateIFT_Many_Many_TranSuccess(ITestContext context) throws InterruptedException {
 

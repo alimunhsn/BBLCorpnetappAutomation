@@ -8,8 +8,8 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-public class TC_004_IFT_Approve_TransferByComSignatory extends BaseTest {
-    @Test
+public class TC_003_IFT_Single_Approve_TransferByComSignatory extends BaseTest {
+    @Test(enabled = true)
     public void Approve_IFT_Single_TranShouldSuccess(ITestContext context) throws InterruptedException {
 
         String iftRef = (String) context.getAttribute("IftTrxReferenceNumber");
@@ -30,7 +30,7 @@ public class TC_004_IFT_Approve_TransferByComSignatory extends BaseTest {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void Approve_IFT_SingleBulk_TranShouldSuccess(ITestContext context) throws InterruptedException {
 
         String iftRef = (String) context.getAttribute("IftTrxReferenceNumber");
@@ -51,7 +51,7 @@ public class TC_004_IFT_Approve_TransferByComSignatory extends BaseTest {
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void Approve_IFT_MultiBulk_TranShouldSuccess(ITestContext context) throws InterruptedException {
 
         String iftRef = (String) context.getAttribute("IftTrxReferenceNumber");

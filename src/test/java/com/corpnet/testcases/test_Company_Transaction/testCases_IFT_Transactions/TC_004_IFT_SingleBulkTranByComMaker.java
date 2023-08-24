@@ -9,7 +9,7 @@ import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
 
-public class TC_003_IFT_SingleBulkTranByComMaker extends BaseTest {
+public class TC_004_IFT_SingleBulkTranByComMaker extends BaseTest {
 
 
     @Test

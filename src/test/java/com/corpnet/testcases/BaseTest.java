@@ -101,6 +101,23 @@ public class BaseTest {
         return properties.getProperty("CompAppUserPass");
     }
 
+    // ############ Payroll Transaction Users Configuration ###############
+    public String getMakerPayrollUser() {
+        return properties.getProperty("MakerPayrollUser");
+    }
+
+    public String getCheckerPayrollUser() {
+        return properties.getProperty("CheckerPayrollUser");
+    }
+
+    public String getApprovePayrollUser() {
+        return properties.getProperty("ComAppPayrollUser");
+    }
+
+    public String getPayrollPassword() {
+        return properties.getProperty("PayrollPassword");
+    }
+
     public String getTransactionTracker() {
         return properties.getProperty("transactionTracker");
 
@@ -110,8 +127,14 @@ public class BaseTest {
         return properties.getProperty("IFTSingleBulk");
 
     }
+
     public String getIFTMultipleBulkFile() {
         return properties.getProperty("IFTMultipleBulk");
+
+    }
+
+    public String getPayrollBulkBulkFile() {
+        return properties.getProperty("PayrollBulk");
 
     }
 

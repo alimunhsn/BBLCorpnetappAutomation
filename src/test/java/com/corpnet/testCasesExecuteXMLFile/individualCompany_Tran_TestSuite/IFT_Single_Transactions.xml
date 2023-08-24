@@ -9,12 +9,12 @@
                 </methods>
             </class>
 
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_IFT_Transactions.TC_002_IFT_TransferByComChecker">
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_IFT_Transactions.TC_002_IFT_Single_TransferByComChecker">
                 <methods>
                     <include name="authorizedIFT_Single_TranShouldSuccess"/>
                 </methods>
             </class>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_IFT_Transactions.TC_004_IFT_Approve_TransferByComSignatory">
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_IFT_Transactions.TC_003_IFT_Single_Approve_TransferByComSignatory">
                 <methods>
                     <include name="Approve_IFT_Single_TranShouldSuccess"/>
                 </methods>
