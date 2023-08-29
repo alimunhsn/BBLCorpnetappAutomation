@@ -1,5 +1,4 @@
 package com.corpnet.testcases.test_Company_Transaction.testCases_IFT_Transactions;
-
 import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.IFT_TransactionByComApprovePage;
 import com.corpnet.pages.loginPages.CorpnetLoginPage;
 import com.corpnet.testcases.BaseTest;
@@ -17,6 +16,7 @@ public class TC_003_IFT_Single_Approve_TransferByComSignatory extends BaseTest {
                 .doLogin(getTranCompAppUser(), getTranCompAppUserPass())
                 .clickIFTApproveQueue()
                 .searchIFTBatchId(iftRef)
+               // .searchIFTBatchId("140823163613733P")
                 .clickApproveBtn()
                 .inputTokenNumber()
                 .clickApproveTokenBtn()
@@ -24,8 +24,10 @@ public class TC_003_IFT_Single_Approve_TransferByComSignatory extends BaseTest {
         Thread.sleep(5000);
         Assert.assertTrue(ift_transactionByComApprovePage.hasSingleTranApprovedSuccess());
         System.out.println("Successfully get Approve Transaction Batch ID , Transaction Batch Id :- " + iftRef);
+        System.out.println(ift_transactionByComApprovePage.debitAccount);
         MockData mockData = new MockData();
         mockData.updateToExcel(2, iftRef);
+        mockData.updateDebitAccToExcel(2, ift_transactionByComApprovePage.debitAccount);
         Thread.sleep(5000);
 
     }
@@ -48,6 +50,7 @@ public class TC_003_IFT_Single_Approve_TransferByComSignatory extends BaseTest {
         MockData mockData = new MockData();
         mockData.updateToExcel(3, iftRef);
         Thread.sleep(5000);
+
 
     }
 

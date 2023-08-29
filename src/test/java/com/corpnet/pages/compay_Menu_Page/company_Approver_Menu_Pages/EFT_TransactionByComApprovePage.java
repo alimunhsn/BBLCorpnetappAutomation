@@ -4,24 +4,28 @@ import com.corpnet.pages.BasePage;
 import com.corpnet.util.CorpnetStringMeg;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class IFT_TransactionByComApprovePage extends BasePage {
-    public String iftChBatch;
+
+public class EFT_TransactionByComApprovePage extends BasePage {
+    public String EftChBatch;
     public String debitAccount;
 
-    public IFT_TransactionByComApprovePage(WebDriver driver) {
+
+    public EFT_TransactionByComApprovePage(WebDriver driver) {
         super(driver);
     }
 
 
-    public IFT_TransactionByComApprovePage searchIFTBatchId(String iftRefID) throws InterruptedException {
-        //   driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(GeneralUtil.PAGE_LOAD_TIME));
-        getWebElement(By.cssSelector("div label input.form-control-sm")).sendKeys(iftRefID);
+    public EFT_TransactionByComApprovePage searchIFTBatchId(String iftSingleRefID) throws InterruptedException {
+        Thread.sleep(5000);
+        getWebElement(By.cssSelector("div label input.form-control-sm")).sendKeys(iftSingleRefID);
         Thread.sleep(3000);
         return this;
     }
 
-    public IFT_TransactionByComApprovePage clickApproveBtn() throws InterruptedException {
+    public EFT_TransactionByComApprovePage clickApproveBtn() throws InterruptedException {
         getWebElement(By.cssSelector("div table tbody tr td button[class$='btn btn-success'][\\type='button']")).click();
         debitAccount = getWebElement(By.cssSelector("tr[role='row'] td:nth-child(5)")).getText();
         System.out.println(debitAccount);
@@ -29,12 +33,20 @@ public class IFT_TransactionByComApprovePage extends BasePage {
         return this;
     }
 
-    public IFT_TransactionByComApprovePage getDebitAccount() throws InterruptedException {
-        debitAccount = getWebElement(By.cssSelector("tr[role='row'] td:nth-child(5)")).getText();
+    public EFT_TransactionByComApprovePage clickOkkBtn() throws InterruptedException {
+
+        if (getWebElement(By.id("idMessageModalYes")).isDisplayed()) {
+            String alertMessage = getWebElement(By.cssSelector("p[id='idRTGSWarn'] label")).getText();
+            System.out.println(alertMessage);
+            Thread.sleep(5000);
+            //clickOkBtnEl.isDisplayed();
+            getWebElement(By.id("idMessageModalYes")).click();
+        }
         return this;
     }
 
-    public IFT_TransactionByComApprovePage inputTokenNumber() {
+    public EFT_TransactionByComApprovePage inputTokenNumber() {
+
         getWebElement(By.xpath("//input[@class='form-control pincode-input-text integer first']")).sendKeys("9");
         getWebElement(By.xpath("//tbody//tr//input[2]")).sendKeys("3");
         getWebElement(By.xpath("(//input[@type='text'])[3]")).sendKeys("3");
@@ -44,21 +56,22 @@ public class IFT_TransactionByComApprovePage extends BasePage {
         return this;
     }
 
-    public IFT_TransactionByComApprovePage clickApproveTokenBtn() throws InterruptedException {
+    public EFT_TransactionByComApprovePage clickApproveTokenBtn() throws InterruptedException {
         getWebElement(By.id("approveLink")).click();
         Thread.sleep(2000);
         return this;
     }
 
-    public IFT_TransactionByComApprovePage clickYesBtn() throws InterruptedException {
+    public EFT_TransactionByComApprovePage clickYesBtn() throws InterruptedException {
         getWebElement(By.id("okModalYes")).click();
         Thread.sleep(2000);
         return this;
     }
 
-    public boolean hasSingleTranApprovedSuccess() {
+    public boolean hasTransactionApprovedSuccess() {
         return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.ApproveTranComplete);
     }
+
 
 
 }

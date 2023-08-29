@@ -88,6 +88,7 @@ public class MockData extends BaseTest {
             XSSFCell cell;
             int transactionRefColumnIndex = 4;
             int statusColumnIndex = 12;
+            int debitAccountIndex= 5;
             TransactionFile=System.getProperty("user.dir")+getTransactionTracker();
             InputStream ExcelFileToRead = new FileInputStream(TransactionFile);
             XSSFWorkbook wb = new XSSFWorkbook(ExcelFileToRead);
@@ -95,6 +96,7 @@ public class MockData extends BaseTest {
             XSSFSheet sheet = wb.getSheetAt(0);
             row = sheet.getRow(rowIndex);
             row.getCell(transactionRefColumnIndex).setCellValue(transactionRef);
+           // row.getCell(debitAccountIndex).setCellValue(DebitAccount);
             if(transactionRef.length() > 10 )
                 row.getCell(statusColumnIndex).setCellValue("PASS");
 //            if(transactionRef.isEmpty()  )
@@ -110,7 +112,37 @@ public class MockData extends BaseTest {
             System.out.println(ex);
         }
     }
+    public void updateDebitAccToExcel(int rowIndex, String DebitAccount) {
 
+        try {
+            XSSFRow row;
+            XSSFCell cell;
+            int transactionRefColumnIndex = 4;
+            int statusColumnIndex = 12;
+            int debitAccountIndex = 5;
+            TransactionFile = System.getProperty("user.dir") + getTransactionTracker();
+            InputStream ExcelFileToRead = new FileInputStream(TransactionFile);
+            XSSFWorkbook wb = new XSSFWorkbook(ExcelFileToRead);
+            XSSFFormulaEvaluator.evaluateAllFormulaCells(wb);
+            XSSFSheet sheet = wb.getSheetAt(0);
+            row = sheet.getRow(rowIndex);
+            // row.getCell(transactionRefColumnIndex).setCellValue(transactionRef);
+            row.getCell(debitAccountIndex).setCellValue(DebitAccount);
+            if (DebitAccount.length() > 16)
+                row.getCell(statusColumnIndex).setCellValue("PASS");
+//            if(transactionRef.isEmpty()  )
+//                row.getCell(statusColumnIndex).setCellValue("Failed");
+            else
+                row.getCell(statusColumnIndex).setCellValue("FAILED");
+
+            // FileOutputStream out = new FileOutputStream(new File(gettrxTracker()));
+            FileOutputStream out = new FileOutputStream(TransactionFile);
+            wb.write(out);
+            out.close();
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
 }
 
 

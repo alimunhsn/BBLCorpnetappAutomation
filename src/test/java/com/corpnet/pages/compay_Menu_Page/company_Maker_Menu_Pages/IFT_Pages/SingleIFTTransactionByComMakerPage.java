@@ -1,4 +1,4 @@
-package com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages;
+package com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.IFT_Pages;
 
 import com.corpnet.pages.BasePage;
 import com.corpnet.util.CorpnetStringMeg;
@@ -70,7 +70,7 @@ public class SingleIFTTransactionByComMakerPage extends BasePage {
     public boolean hasSingleTranInitiatedSuccess() {
 
         // return getWebElements(By.linkText("Your transaction request has been initiated successfully.")).size() > 0;
-        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.IFTSingleTranComplete);
+        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranInitiateComplete);
     }
 
 

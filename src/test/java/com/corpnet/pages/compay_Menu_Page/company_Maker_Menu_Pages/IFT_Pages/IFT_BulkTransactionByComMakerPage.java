@@ -1,4 +1,4 @@
-package com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages;
+package com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.IFT_Pages;
 
 import com.corpnet.pages.BasePage;
 import com.corpnet.util.CorpnetStringMeg;
@@ -102,7 +102,7 @@ public class IFT_BulkTransactionByComMakerPage extends BasePage {
 
     public boolean hasSingleBulkTranInitiatedSuccess() {
 
-        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.IFTSingleTranComplete);
+        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranInitiateComplete);
         // return getWebElements(By.linkText("Your transaction request has been initiated successfully.")).size() > 0;
         //return getWebElement(By.linkText("Your transaction request has been initiated successfully.")).getText().trim().contains(CorpnetStringMeg.IFTSingleTranComplete);
     }
@@ -110,7 +110,7 @@ public class IFT_BulkTransactionByComMakerPage extends BasePage {
     public boolean hasMultiBulkTranInitiatedSuccess() {
 
         // return getWebElements(By.linkText("Your transaction request has been initiated successfully.")).size() > 0;
-        return getWebElement(By.linkText("Your transaction request has been initiated successfully.")).getText().trim().contains(CorpnetStringMeg.IFTSingleTranComplete);
+        return getWebElement(By.linkText("Your transaction request has been initiated successfully.")).getText().trim().contains(CorpnetStringMeg.TranInitiateComplete);
     }
 
 

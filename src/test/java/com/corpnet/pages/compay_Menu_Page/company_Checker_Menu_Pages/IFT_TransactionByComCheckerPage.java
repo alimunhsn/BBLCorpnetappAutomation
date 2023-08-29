@@ -35,7 +35,7 @@ public class IFT_TransactionByComCheckerPage extends BasePage {
     }
 
     public boolean hasSingleTranAuthorizedSuccess() {
-       return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.IFTSingleAuthTranComplete);
+       return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
     }
 
 

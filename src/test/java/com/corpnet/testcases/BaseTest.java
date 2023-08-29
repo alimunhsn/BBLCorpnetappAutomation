@@ -114,6 +114,8 @@ public class BaseTest {
         return properties.getProperty("ComAppPayrollUser");
     }
 
+
+    //########## _______User & Password Configure--#####################
     public String getPayrollPassword() {
         return properties.getProperty("PayrollPassword");
     }
@@ -123,6 +125,8 @@ public class BaseTest {
 
     }
 
+
+    //-----------########## IFT Bulk File Configure---##############
     public String getIFTSingleBulkFile() {
         return properties.getProperty("IFTSingleBulk");
 
@@ -135,6 +139,16 @@ public class BaseTest {
 
     public String getPayrollBulkBulkFile() {
         return properties.getProperty("PayrollBulk");
+
+    }
+
+    //--####### EFT Bulk File Configure---##############
+    public String getEFTSingleBulkFile() {
+        return properties.getProperty("EFTSingleBulk");
+
+    }
+    public String getEFTMultipleBulkFile() {
+        return properties.getProperty("EFTMultipleBulk");
 
     }
 

@@ -1,7 +1,7 @@
 package com.corpnet.testcases.test_Company_Transaction.testCases_IFT_Transactions;
 
 
-import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.IFT_BulkTransactionByComMakerPage;
+import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.IFT_Pages.IFT_BulkTransactionByComMakerPage;
 import com.corpnet.pages.loginPages.CorpnetLoginPage;
 import com.corpnet.testcases.BaseTest;
 import org.testng.Assert;
