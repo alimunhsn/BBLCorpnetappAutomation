@@ -128,7 +128,7 @@ public class MockData extends BaseTest {
             row = sheet.getRow(rowIndex);
             // row.getCell(transactionRefColumnIndex).setCellValue(transactionRef);
             row.getCell(debitAccountIndex).setCellValue(DebitAccount);
-            if (DebitAccount.length() > 16)
+            if (DebitAccount.length() <= 16)
                 row.getCell(statusColumnIndex).setCellValue("PASS");
 //            if(transactionRef.isEmpty()  )
 //                row.getCell(statusColumnIndex).setCellValue("Failed");

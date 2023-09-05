@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 public class TC_016_BEFTN_Single_Bulk_TransferByComMaker extends BaseTest {
 
     @Test
-    public void success_EFT_Single_Many_Transaction_initiate(ITestContext context) throws InterruptedException {
+    public void success_EFT_Single_Bulk_Transaction_initiate(ITestContext context) throws InterruptedException {
        String EFTSingleFile=System.getProperty("user.dir") +getEFTSingleBulkFile();
 
         EFT_BulkTransactionByComMakerPage eft_bulkTransactionByComMakerPage =
@@ -30,7 +30,6 @@ public class TC_016_BEFTN_Single_Bulk_TransferByComMaker extends BaseTest {
         MockData mockData = new MockData();
         mockData.updateToExcel(9, eftTrxReferenceNumber);
         Thread.sleep(5000);
-
 
     }
 

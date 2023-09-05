@@ -12,7 +12,7 @@ public class TC_021_BEFTN_Multi_Bulk_TransferByComApprove extends BaseTest {
 
 
     @Test
-    public void Approve_EFT_Many_Many_TranSuccess(ITestContext context) throws InterruptedException {
+    public void Approve_EFT_Multi_Bulk_TranSuccess(ITestContext context) throws InterruptedException {
 
         String EftRefNo = (String) context.getAttribute("EftTrxReferenceNumber");
         EFT_TransactionByComApprovePage eft_transactionByComApprovePage =

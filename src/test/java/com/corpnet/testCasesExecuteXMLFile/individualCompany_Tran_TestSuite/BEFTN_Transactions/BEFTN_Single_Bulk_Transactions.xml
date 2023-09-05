@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="IFT_Single_Tran">
+        <classes>
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_EFT_Transactions.TC_016_BEFTN_Single_Bulk_TransferByComMaker">
+                <methods>
+                    <include name="success_EFT_Single_Bulk_Transaction_initiate"/>
+                </methods>
+            </class>
+
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_EFT_Transactions.TC_017_BEFTN_Single_Bulk_TransferByComChecker">
+                <methods>
+                    <include name="authorized_BEFTN_Single_Bulk_TranSuccess"/>
+                </methods>
+            </class>
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_EFT_Transactions.TC_018_BEFTN_Single_Bulk_Approve_TransferByComApprove">
+                <methods>
+                    <include name="Approve_EFT_single_Bulk_TranApproveSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

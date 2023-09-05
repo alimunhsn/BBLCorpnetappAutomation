@@ -2,12 +2,16 @@ package com.corpnet.pages;
 
 import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.EFT_TransactionByComApprovePage;
 import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.IFT_TransactionByComApprovePage;
+import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.RTGS_BulkTransactionPageByComApprover;
 import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.EFT_TransactionByComCheckerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.IFT_TransactionByComCheckerPage;
+import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.RTGS_BulkTransactionPageByComChecker;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.EFT_Pages.EFT_BulkTransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.EFT_Pages.Single_EFT_TransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.IFT_Pages.IFT_BulkTransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.IFT_Pages.SingleIFTTransactionByComMakerPage;
+import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.RTGS_Pages.RTGS_BulkTransactionByComMakerPage;
+import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.RTGS_Pages.RTGS_SingleTransactionByComMakerPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -85,5 +89,32 @@ public class HomePage extends BasePage {
         return getInstance(EFT_TransactionByComApprovePage.class);
     }
 
+    public RTGS_SingleTransactionByComMakerPage clickSingleRTGS() {
+
+        new Actions(driver).click(TransactionModule).perform();
+        getWebElement(By.linkText("RTGS")).click();
+        getWebElement(By.linkText("Single RTGS")).click();
+        return getInstance(RTGS_SingleTransactionByComMakerPage.class);
+    }
+
+    public RTGS_BulkTransactionByComMakerPage clickRTGSBulk() {
+
+        new Actions(driver).click(TransactionModule).perform();
+        getWebElement(By.linkText("RTGS")).click();
+        getWebElement(By.linkText("Bulk RTGS")).click();
+        return getInstance(RTGS_BulkTransactionByComMakerPage.class);
+    }
+
+    public RTGS_BulkTransactionPageByComApprover clickRTGSApproveQueue() {
+
+        return getInstance(RTGS_BulkTransactionPageByComApprover.class);
+    }
+
+    public RTGS_BulkTransactionPageByComChecker clickRTGSCheckerQueue() {
+
+        new Actions(driver).click(TransactionModule).perform();
+        getWebElement(By.cssSelector("a[href$='controller/company-checker']")).click();
+        return getInstance(RTGS_BulkTransactionPageByComChecker.class);
+    }
 
 }

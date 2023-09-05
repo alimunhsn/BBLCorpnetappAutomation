@@ -14,8 +14,8 @@ public class Single_EFT_TransactionByComMakerPage extends BasePage {
 
 
     public Single_EFT_TransactionByComMakerPage selectComAcc(int index) {
-        getWebElement(By.id("companyAccount")).sendKeys();
-        // new Select(selectComAccEl).selectByIndex(index);
+        //getWebElement(By.id("companyAccount")).sendKeys("CompanyAccount");
+         new Select(getWebElement(By.id("companyAccount"))).selectByIndex(index);
         return this;
     }
 

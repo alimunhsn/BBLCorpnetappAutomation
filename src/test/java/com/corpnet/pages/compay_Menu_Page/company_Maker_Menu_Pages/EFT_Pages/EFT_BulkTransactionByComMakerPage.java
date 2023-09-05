@@ -41,7 +41,7 @@ public class EFT_BulkTransactionByComMakerPage extends BasePage {
 
     }
 
-    public EFT_BulkTransactionByComMakerPage uploadIFTMultiFile() {
+    public EFT_BulkTransactionByComMakerPage uploadIFTMultiFile(String EFTMultiFIle) {
       //  EFTMultiFIle=System.getProperty("user.dir")+getEFTMultipleBulk();
         getWebElement(By.cssSelector("input#file")).sendKeys(EFTMultiFIle);
         return this;

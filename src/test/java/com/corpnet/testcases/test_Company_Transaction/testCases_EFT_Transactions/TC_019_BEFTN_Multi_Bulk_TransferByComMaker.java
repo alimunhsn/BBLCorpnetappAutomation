@@ -11,12 +11,13 @@ public class TC_019_BEFTN_Multi_Bulk_TransferByComMaker extends BaseTest {
 
 
     @Test
-    public void success_EFT_Many_Many_Transaction_initiate(ITestContext context) throws InterruptedException {
+    public void success_EFT_Multi_bulk_Transaction_initiate(ITestContext context) throws InterruptedException {
+        String EFTMultipleBulkFile = System.getProperty("user.dir") + getEFTMultipleBulkFile();
         EFT_BulkTransactionByComMakerPage eft_bulkTransactionByComMakerPage =
                 page.getInstance(CorpnetLoginPage.class).doLogin(getTranMCUser(), getTranMCUserPass())
                         .clickEFTBulk()
-                        .selectAccountNo(0)
-                        .uploadIFTMultiFile()
+                        .selectAccountNo(getSelectAccount())
+                        .uploadIFTMultiFile(EFTMultipleBulkFile)
                         .fillRemarks("EFT_Many_To_Many")
                         .clickRadioMulti()
                         .clickUploadBtn()
