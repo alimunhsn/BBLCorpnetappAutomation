@@ -1,10 +1,9 @@
 package com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.Payroll_Pages;
 
 import com.corpnet.pages.BasePage;
+import com.corpnet.util.CorpnetStringMeg;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 public class Single_Payroll_TranByComMakerPage extends BasePage {
@@ -50,6 +49,13 @@ public class Single_Payroll_TranByComMakerPage extends BasePage {
 
         return this;
     }
+
+    public boolean hasSingleTranInitiatedSuccess() {
+
+        // return getWebElements(By.linkText("Your transaction request has been initiated successfully.")).size() > 0;
+        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranInitiateComplete);
+    }
+
 
 
 }

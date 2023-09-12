@@ -2,14 +2,18 @@ package com.corpnet.pages;
 
 import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.EFT_TransactionByComApprovePage;
 import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.IFT_TransactionByComApprovePage;
+import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.Payroll_TransactionByComApprovePage;
 import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.RTGS_BulkTransactionPageByComApprover;
 import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.EFT_TransactionByComCheckerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.IFT_TransactionByComCheckerPage;
+import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.Payroll_TransactionByComCheckerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.RTGS_BulkTransactionPageByComChecker;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.EFT_Pages.EFT_BulkTransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.EFT_Pages.Single_EFT_TransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.IFT_Pages.IFT_BulkTransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.IFT_Pages.SingleIFTTransactionByComMakerPage;
+import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.Payroll_Pages.BulkPayrollTranByComMakerPage;
+import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.Payroll_Pages.Single_Payroll_TranByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.RTGS_Pages.RTGS_BulkTransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.RTGS_Pages.RTGS_SingleTransactionByComMakerPage;
 import org.openqa.selenium.By;
@@ -117,4 +121,31 @@ public class HomePage extends BasePage {
         return getInstance(RTGS_BulkTransactionPageByComChecker.class);
     }
 
+    public Single_Payroll_TranByComMakerPage clickSinglePayroll() {
+
+        new Actions(driver).click(TransactionModule).perform();
+        getWebElement(By.linkText("Payroll")).click();
+        getWebElement(By.linkText("Single IFT")).click();
+        return getInstance(Single_Payroll_TranByComMakerPage.class);
+    }
+
+    public Payroll_TransactionByComCheckerPage clickPayrollCheckerQueue() {
+
+        new Actions(driver).click(TransactionModule).perform();
+        getWebElement(By.cssSelector("a[href$='controller/company-checker']")).click();
+        return getInstance(Payroll_TransactionByComCheckerPage.class);
+    }
+
+    public Payroll_TransactionByComApprovePage clickPayrollApproveQueue() {
+
+        return getInstance(Payroll_TransactionByComApprovePage.class);
+    }
+
+    public BulkPayrollTranByComMakerPage clickPayrollBulk() {
+
+        new Actions(driver).click(TransactionModule).perform();
+        getWebElement(By.linkText("EFT")).click();
+        getWebElement(By.linkText("Bulk EFT")).click();
+        return getInstance(BulkPayrollTranByComMakerPage.class);
+    }
 }
