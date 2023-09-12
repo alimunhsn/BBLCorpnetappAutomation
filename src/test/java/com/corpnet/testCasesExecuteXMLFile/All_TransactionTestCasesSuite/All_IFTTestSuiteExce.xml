@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All EFT Test Suite">
+    <test verbose="2" preserve-order="true" name="Test">
+    </test>
+
+    <suite-files>
+
+        <suite-file path="../individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Single_Transactions.xml"></suite-file>
+        <suite-file path="../individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Single_Bulk_Transactions.xml"></suite-file>
+        <suite-file path="../individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Multi_Bulk_Transactions.xml"></suite-file>
+
+
+        <suite-file path="../individualCompany_Tran_TestSuite/BEFTN_Transactions/BEFTN_Single_Transactions.xml"></suite-file>
+        <suite-file path="../individualCompany_Tran_TestSuite/BEFTN_Transactions/BEFTN_Single_Bulk_Transactions.xml"></suite-file>
+        <suite-file path="../individualCompany_Tran_TestSuite/BEFTN_Transactions/BEFTN_Multi_Bulk_Transactions.xml"></suite-file>
+
+
+    </suite-files>
+</suite>

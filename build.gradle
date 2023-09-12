@@ -18,6 +18,10 @@ dependencies {
 
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.4.1'
+
+    testImplementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.4'
+    testImplementation 'org.apache.poi:poi:5.2.2'
+    testImplementation 'org.apache.poi:poi-ooxml:5.2.2'
 }
 
 test {
