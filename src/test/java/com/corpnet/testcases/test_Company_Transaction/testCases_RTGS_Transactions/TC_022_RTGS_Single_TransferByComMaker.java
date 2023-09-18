@@ -21,9 +21,12 @@ public class TC_022_RTGS_Single_TransferByComMaker extends BaseTest {
                 .confirmButton();
         Assert.assertTrue(rtgs_singleTransactionByComMakerPage.hasSingleRTGS_TranInitiatedSuccess());
         String RTGSTrxReferenceNumber = rtgs_singleTransactionByComMakerPage.SingleIftBatch;
-        context.setAttribute("rtgsTrxReferenceNumber", RTGSTrxReferenceNumber);
+        context.setAttribute("TrxReferNumber", RTGSTrxReferenceNumber);
+
+
+
         System.out.println("Successfully upload the RTGS Transaction, Transaction Batch Id :- " + RTGSTrxReferenceNumber);
-        Thread.sleep(10000);
+        Thread.sleep(5000);
 
     }
 

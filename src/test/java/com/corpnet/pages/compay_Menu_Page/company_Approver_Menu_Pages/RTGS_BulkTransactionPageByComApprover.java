@@ -65,7 +65,7 @@ public class RTGS_BulkTransactionPageByComApprover extends BasePage {
         getWebElement(By.cssSelector("div table tbody tr td button[class$='btn btn-success'][\\type='button']")).click();
         debitAccount = getWebElement(By.cssSelector("tr[role='row'] td:nth-child(5)")).getText();
         System.out.println(debitAccount);
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         return this;
     }
 

@@ -9,6 +9,7 @@
         <suite-file path="../individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Single_Transactions.xml"></suite-file>
         <suite-file path="../individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Single_Bulk_Transactions.xml"></suite-file>
         <suite-file path="../individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Multi_Bulk_Transactions.xml"></suite-file>
+        <suite-file path="../individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Multi_Bulk_Transactions.xml"></suite-file>
 
 
         <suite-file path="../individualCompany_Tran_TestSuite/BEFTN_Transactions/BEFTN_Single_Transactions.xml"></suite-file>

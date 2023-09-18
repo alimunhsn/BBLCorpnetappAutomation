@@ -42,8 +42,8 @@ public class RTGS_BulkTransactionByComMakerPage extends BasePage {
         return this;
     }
 
-    public RTGS_BulkTransactionByComMakerPage uploadIFTFile() {
-        getWebElement(By.cssSelector("input#file")).sendKeys(RTGSBulkFile);
+    public RTGS_BulkTransactionByComMakerPage uploadIFTFile(String rtgsBulkFile) {
+        getWebElement(By.cssSelector("input#file")).sendKeys(rtgsBulkFile);
         return this;
 
     }

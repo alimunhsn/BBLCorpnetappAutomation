@@ -5,9 +5,9 @@
         <classes/>
     </test>
     <test verbose="2" preserve-order="true"
-          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_022_RTGS_Single_TransferByComMaker.java">
+          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_RTGS_Single_TransferByComMaker">
         <classes>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_022_RTGS_Single_TransferByComMaker">
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_RTGS_Single_TransferByComMaker">
                 <methods>
                     <include name="initiateRTGS_Single_TranSuccess"/>
                 </methods>
@@ -19,7 +19,7 @@
         <classes>
             <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_023_RTGS_Single_TransferByComChecker">
                 <methods>
-                    <include name="Authorized_RTGS_Single_TranSuccess"/>
+                    <include name="Auth_Rtgs_Tran"/>
                 </methods>
             </class>
         </classes>
@@ -34,34 +34,4 @@
             </class>
         </classes>
     </test>
-    <test verbose="2" preserve-order="true"
-          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_025_RTGS_Bulk_TransferByComMaker.java">
-        <classes>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_025_RTGS_Bulk_TransferByComMaker">
-                <methods>
-                    <include name="initiate_RTGS_Bulk_TranSuccess"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true"
-          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_026_RTGS_TransferByComChecker.java">
-        <classes>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_026_RTGS_TransferByComChecker">
-                <methods>
-                    <include name="Authorized_RTGS_Bulk_TranSuccess"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true"
-          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_027_RTGS_TransferByComApprove.java">
-        <classes>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_027_RTGS_TransferByComApprove">
-                <methods>
-                    <include name="Rtgs_ApproveByApprover"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-</suite>
+   </suite>

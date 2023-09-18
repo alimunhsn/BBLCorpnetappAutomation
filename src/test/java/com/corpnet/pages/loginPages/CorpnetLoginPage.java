@@ -25,7 +25,7 @@ public class CorpnetLoginPage extends BasePage {
     }
 
     public HomePage clickLoginBtn() {
-        getWebElement(By.cssSelector("div.w-full:nth-child(3)")).click();
+        getWebElement(By.cssSelector("div[class='w-full'] button[class='flex-c-m s2-txt2 size4 bg1 bor1 hov1 trans-04']")).click();
         return getInstance(HomePage.class);
     }
 

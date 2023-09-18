@@ -8,16 +8,14 @@ import org.testng.annotations.Test;
 
 public class TC_026_RTGS_TransferByComChecker extends BaseTest {
 
-
     @Test
     public void Authorized_RTGS_Bulk_TranSuccess(ITestContext context) throws InterruptedException {
 
         String rtgsRef = (String) context.getAttribute("rtgsTrxReferenceNumber");
-        RTGS_BulkTransactionPageByComChecker rtgs_bulkTransactionPageByComChecker
-                = page.getInstance(CorpnetLoginPage.class)
+        RTGS_BulkTransactionPageByComChecker rtgs_bulkTransactionPageByComChecker=page.getInstance(CorpnetLoginPage.class)
                 .doLogin(getTranMCUser(), getTranMCUserPass())
                 .clickRTGSCheckerQueue()
-                .searchIFTBatchId(rtgsRef)
+                .searchIFTBatchId("rtgsRef")
                 .clickAuthorizeBtn()
                 .clickSubmitBtn();
         System.out.println("Successfully get Transaction Id, Transaction Batch Id :- " + rtgsRef);

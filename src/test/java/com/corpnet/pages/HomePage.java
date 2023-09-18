@@ -1,13 +1,7 @@
 package com.corpnet.pages;
 
-import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.EFT_TransactionByComApprovePage;
-import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.IFT_TransactionByComApprovePage;
-import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.Payroll_TransactionByComApprovePage;
-import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.RTGS_BulkTransactionPageByComApprover;
-import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.EFT_TransactionByComCheckerPage;
-import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.IFT_TransactionByComCheckerPage;
-import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.Payroll_TransactionByComCheckerPage;
-import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.RTGS_BulkTransactionPageByComChecker;
+import com.corpnet.pages.compay_Menu_Page.company_Approver_Menu_Pages.*;
+import com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages.*;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.EFT_Pages.EFT_BulkTransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.EFT_Pages.Single_EFT_TransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.IFT_Pages.IFT_BulkTransactionByComMakerPage;
@@ -16,6 +10,7 @@ import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.Payroll_Pages
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.Payroll_Pages.Single_Payroll_TranByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.RTGS_Pages.RTGS_BulkTransactionByComMakerPage;
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.RTGS_Pages.RTGS_SingleTransactionByComMakerPage;
+import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.Universal_Acc_TranPages.Universal_Acc_TransferByComMakerPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -114,10 +109,11 @@ public class HomePage extends BasePage {
         return getInstance(RTGS_BulkTransactionPageByComApprover.class);
     }
 
-    public RTGS_BulkTransactionPageByComChecker clickRTGSCheckerQueue() {
+    public RTGS_BulkTransactionPageByComChecker clickRTGSCheckerQueue() throws InterruptedException {
 
         new Actions(driver).click(TransactionModule).perform();
         getWebElement(By.cssSelector("a[href$='controller/company-checker']")).click();
+        Thread.sleep(5000);
         return getInstance(RTGS_BulkTransactionPageByComChecker.class);
     }
 
@@ -147,5 +143,24 @@ public class HomePage extends BasePage {
         getWebElement(By.linkText("EFT")).click();
         getWebElement(By.linkText("Bulk EFT")).click();
         return getInstance(BulkPayrollTranByComMakerPage.class);
+    } public Universal_Acc_TransferByComMakerPage clickUniOwnAccBulk() {
+
+        new Actions(driver).click(TransactionModule).perform();
+        getWebElement(By.linkText("Own Account Transfer")).click();
+        getWebElement(By.cssSelector("ul li a[href$='/universalTrxUpload/universalUpload']")).click();
+        return getInstance(Universal_Acc_TransferByComMakerPage.class);
     }
+
+    public Universal_Acc_TransactionByComCheckerPage clickUniversalAccTranCheckerQueue() {
+
+        new Actions(driver).click(TransactionModule).perform();
+        getWebElement(By.cssSelector("a[href$='controller/company-checker']")).click();
+        return getInstance(Universal_Acc_TransactionByComCheckerPage.class);
+    }
+    public Universal_Acc_TransactionByComApprovePage clickUniversalApproveQueue() {
+
+        return getInstance(Universal_Acc_TransactionByComApprovePage.class);
+    }
+
+
 }

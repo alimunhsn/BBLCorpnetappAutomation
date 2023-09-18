@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All EFT Test Suite">
+    <test verbose="2" preserve-order="true" name="Test">
+    </test>
+
+    <suite-files>
+
+        <suite-file path="../java/com/corpnet/testCasesExecuteXMLFile/individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Single_Transactions.xml"></suite-file>
+         </suite-files>
+</suite>

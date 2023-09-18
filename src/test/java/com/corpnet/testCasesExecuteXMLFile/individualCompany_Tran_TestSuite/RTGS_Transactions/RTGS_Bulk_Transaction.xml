@@ -2,39 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/src/test/resources">
-        <classes/>
-    </test>
-    <test verbose="2" preserve-order="true"
-          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_022_RTGS_Single_TransferByComMaker.java">
-        <classes>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_022_RTGS_Single_TransferByComMaker">
-                <methods>
-                    <include name="initiateRTGS_Single_TranSuccess"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true"
-          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_023_RTGS_Single_TransferByComChecker.java">
-        <classes>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_023_RTGS_Single_TransferByComChecker">
-                <methods>
-                    <include name="Authorized_RTGS_Single_TranSuccess"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true"
-          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_024_RTGS_Single_TransferByComApprove.java">
-        <classes>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_024_RTGS_Single_TransferByComApprove">
-                <methods>
-                    <include name="approve_Single_ByApproveSuccess"/>
-                </methods>
-            </class>
-        </classes>
-    </test>
-    <test verbose="2" preserve-order="true"
+       <test verbose="2" preserve-order="true"
           name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_025_RTGS_Bulk_TransferByComMaker.java">
         <classes>
             <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_025_RTGS_Bulk_TransferByComMaker">

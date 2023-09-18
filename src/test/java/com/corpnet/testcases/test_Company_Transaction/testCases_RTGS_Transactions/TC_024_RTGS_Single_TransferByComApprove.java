@@ -20,7 +20,7 @@ public class TC_024_RTGS_Single_TransferByComApprove extends BaseTest {
                 .searchRTGSBatchId(rtgsRef)
                 .clickApproveBtn()
                 .inputTokenNumber()
-                .clickApproveBtn()
+                .clickApproveTokenBtn()
                 .clickOkButton();
         Assert.assertTrue(rtgs_bulkTransactionPageByComApprover.hasRTGSSingleTranApprovedSuccess());
         MockData mockData = new MockData();

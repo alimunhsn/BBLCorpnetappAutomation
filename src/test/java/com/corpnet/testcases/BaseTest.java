@@ -147,8 +147,30 @@ public class BaseTest {
         return properties.getProperty("EFTSingleBulk");
 
     }
+
     public String getEFTMultipleBulkFile() {
         return properties.getProperty("EFTMultipleBulk");
+
+    }
+
+    public String getRTGSBulkFile() {
+        return properties.getProperty("RTGSBulk");
+
+    }
+
+    public String getSpAuthMakerUser() {
+        return properties.getProperty("SpAuthMakerUser");
+
+    }    public String getSpAuthCheckerUser() {
+        return properties.getProperty("SpAuthCheckerUser");
+
+    }   public String getSpAuthSingApproveUser() {
+        return properties.getProperty("SpAuthSingApproveUser");
+
+    }
+
+    public String getSpAuthMakerUserPass() {
+        return properties.getProperty("SpAuthMakerUserPass");
 
     }
 

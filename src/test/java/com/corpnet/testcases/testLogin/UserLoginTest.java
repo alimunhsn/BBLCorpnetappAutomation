@@ -11,8 +11,8 @@ public class UserLoginTest extends BaseTest {
     @Test
     public void loginShouldSuccess() {
         HomePage homePage = page.getInstance(CorpnetLoginPage.class)
-                .fillUsername(getOpsMakerUser())
-                .fillPassword(getOpsMakerPass())
+                .fillUsername(getTranMCUser())
+                .fillPassword(getTranMCUserPass())
                 .clickLoginBtn();
         Assert.assertTrue(homePage.hasLogoutLink());
 
