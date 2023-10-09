@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All IFT Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testCasesExecuteXMLFile/individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Multi_Bulk_Transactions.xml">
+        <classes/>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testCasesExecuteXMLFile/individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Single_Bulk_Transactions.xml">
+        <classes/>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testCasesExecuteXMLFile/individualCompany_Tran_TestSuite/IFT_Transactions/IFT_Single_Transactions.xml">
+        <classes/>
+    </test>
+</suite>

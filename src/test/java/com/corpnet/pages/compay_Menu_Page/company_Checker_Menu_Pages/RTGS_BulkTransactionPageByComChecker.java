@@ -1,5 +1,6 @@
 package com.corpnet.pages.compay_Menu_Page.company_Checker_Menu_Pages;
 import com.corpnet.pages.BasePage;
+import com.corpnet.util.CorpnetStringMeg;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,13 +49,14 @@ public class RTGS_BulkTransactionPageByComChecker extends BasePage {
 
         getWebElement(By.cssSelector("tr[class='odd'] button[type='button']")).click();
         //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(GeneralUtil.PAGE_LOAD_TIME));
-        Thread.sleep(15000);
+        Thread.sleep(5000);
 
         return this;
 
     }
 
     public RTGS_BulkTransactionPageByComChecker clickSubmitBtn() throws InterruptedException {
+        Thread.sleep(5000);
         getWebElement(By.id("idSubmitButton")).click();
         Thread.sleep(5000);
         return this;
@@ -72,6 +74,13 @@ public class RTGS_BulkTransactionPageByComChecker extends BasePage {
         fillRejectReasonEl.isDisplayed();
         clickRejectBtnEl.sendKeys(rejectReason);
         return this;
+
+    }
+
+    public boolean hasSingleTranAuthorizedSuccess() {
+        return getWebElement(By.cssSelector("div[aria-modal='true'] div.modal-body p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        // return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        // return getWebElement(By.cssSelector("div.modal-body>p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
 
     }
 }

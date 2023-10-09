@@ -23,6 +23,7 @@ public class TC_013_BEFTN_Single_TransferByComMaker extends BaseTest {
                         .fillTrxRemarks()
                         .clickNextBtn()
                         .clickConfirmBtn();
+        Thread.sleep(1500);
         Assert.assertTrue(singleEftTransactionByComMakerPage.hasSingleTranInitiatedSuccess());
         String SingleEftTrxReferenceNumber = singleEftTransactionByComMakerPage.SingleEftBatch;
         context.setAttribute("EftTrxReferenceNumber", SingleEftTrxReferenceNumber);

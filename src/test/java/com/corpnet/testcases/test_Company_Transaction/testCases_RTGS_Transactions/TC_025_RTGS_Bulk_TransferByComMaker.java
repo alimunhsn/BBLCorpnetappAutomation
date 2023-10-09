@@ -22,11 +22,11 @@ public class TC_025_RTGS_Bulk_TransferByComMaker extends BaseTest {
                 .fillRemarks("RTGS_Bulk_Transaction")
                 .clickUploadBtn()
                 .clickConfirmBtn();
+        Thread.sleep(8000);
         Assert.assertTrue(rtgs_bulkTransactionByComMakerPage.hasRTGS_Bulk_TranInitiatedSuccess());
-        System.out.println(rtgs_bulkTransactionByComMakerPage.hasRTGS_Bulk_TranInitiatedSuccess());
         String RTGSTrxReferenceNumber = rtgs_bulkTransactionByComMakerPage.rtgsBatchRef;
         context.setAttribute("rtgsTrxReferenceNumber", RTGSTrxReferenceNumber);
         System.out.println("Successfully upload the IFT One To Many Transaction, Transaction Batch Id :- " + RTGSTrxReferenceNumber);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
     }
 }

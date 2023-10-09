@@ -47,26 +47,31 @@ public class EFT_TransactionByComCheckerPage extends BasePage {
         return this;
 
     }
+
     public EFT_TransactionByComCheckerPage clickRejectBtn() {
         getWebElement(By.id("idSubmitButton")).click();
         return this;
 
     }
+
     public EFT_TransactionByComCheckerPage fillRejectReason(String rejectReason) {
         fillRejectReasonEl.isDisplayed();
         clickRejectBtnEl.sendKeys(rejectReason);
         return this;
 
     }
+
     public boolean hasSingleTranAuthorizedSuccess() {
-        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        return getWebElement(By.cssSelector("div[aria-modal='true'] div.modal-body p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        // return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        // return getWebElement(By.cssSelector("div.modal-body>p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+
     }
 
     public boolean hasBulkTranAuthorizedSuccess() {
-        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        // return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        return getWebElement(By.cssSelector("div[aria-modal='true'] div.modal-body p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
     }
-
-
 
 
 }

@@ -22,7 +22,7 @@ public class TC_004_IFT_SingleBulkTranByComMaker extends BaseTest {
                 .fillRemarks("IFT_OneToMany_Transaction")
                 .clickUploadBtn()
                 .clickConfirmBtn();
-
+        Thread.sleep(1500);
         Assert.assertTrue(iftBulkTransactionByComMakerPage.hasSingleBulkTranInitiatedSuccess());
         String IFT1to1TrxReferenceNumber = iftBulkTransactionByComMakerPage.iftBatch;
         context.setAttribute("IftTrxReferenceNumber", IFT1to1TrxReferenceNumber);

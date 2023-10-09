@@ -20,7 +20,7 @@ public class TC_011_IFT_Payroll_TransferByComChecker extends BaseTest {
                         .searchIFTSingleBatchId(iftTranRef)
                         .clickAuthorizeBtn()
                         .clickSubmitBtn();
-            Thread.sleep(5000);
+            Thread.sleep(3000);
             Assert.assertTrue(iftTransactionByComCheckerPage.hasSingleTranAuthorizedSuccess());
 
             System.out.println("Successfully fetched the Single IFT Ref:" + iftTranRef);

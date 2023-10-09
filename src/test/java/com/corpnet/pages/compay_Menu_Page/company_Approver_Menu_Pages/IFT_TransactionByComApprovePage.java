@@ -57,7 +57,8 @@ public class IFT_TransactionByComApprovePage extends BasePage {
     }
 
     public boolean hasSingleTranApprovedSuccess() {
-        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.ApproveTranComplete);
+      //  return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.ApproveTranComplete);
+        return getWebElement(By.cssSelector("div.modal-body>p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.ApproveTranComplete);
     }
 
 

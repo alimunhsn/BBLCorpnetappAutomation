@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openxmlformats.schemas.drawingml.x2006.main.ThemeDocument;
 
 import java.time.Duration;
 
@@ -56,16 +57,21 @@ public class RTGS_BulkTransactionPageByComApprover extends BasePage {
 
     public RTGS_BulkTransactionPageByComApprover searchRTGSBatchId(String RTGSRefID) throws InterruptedException {
         //   driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(GeneralUtil.PAGE_LOAD_TIME));
+        Thread.sleep(3000);
         getWebElement(By.cssSelector("div label input.form-control-sm")).sendKeys(RTGSRefID);
         Thread.sleep(3000);
         return this;
     }
 
     public RTGS_BulkTransactionPageByComApprover clickApproveBtn() throws InterruptedException {
+
         getWebElement(By.cssSelector("div table tbody tr td button[class$='btn btn-success'][\\type='button']")).click();
         debitAccount = getWebElement(By.cssSelector("tr[role='row'] td:nth-child(5)")).getText();
         System.out.println(debitAccount);
         Thread.sleep(2000);
+        if (getWebElement(By.cssSelector("div.modal-footer button#idMessageModalYes")).isDisplayed()) {
+            getWebElement(By.cssSelector("div.modal-footer button#idMessageModalYes")).click();
+        }
         return this;
     }
 
@@ -74,13 +80,14 @@ public class RTGS_BulkTransactionPageByComApprover extends BasePage {
         return this;
     }
 
-    public RTGS_BulkTransactionPageByComApprover inputTokenNumber() {
+    public RTGS_BulkTransactionPageByComApprover inputTokenNumber() throws InterruptedException {
         getWebElement(By.xpath("//input[@class='form-control pincode-input-text integer first']")).sendKeys("9");
         getWebElement(By.xpath("//tbody//tr//input[2]")).sendKeys("3");
         getWebElement(By.xpath("(//input[@type='text'])[3]")).sendKeys("3");
         getWebElement(By.xpath("(//input[@type='text'])[4]")).sendKeys("9");
         getWebElement(By.xpath("(//input[@type='text'])[5]")).sendKeys("4");
         getWebElement(By.cssSelector(".form-control.pincode-input-text.integer.last")).sendKeys("6");
+        Thread.sleep(2000);
         return this;
     }
 
@@ -107,7 +114,9 @@ public class RTGS_BulkTransactionPageByComApprover extends BasePage {
 
 
     public boolean hasRTGSSingleTranApprovedSuccess() {
-        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.ApproveTranComplete);
+       // return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.ApproveTranComplete);
+        return getWebElement(By.cssSelector("div.modal-body>p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.ApproveTranComplete);
+
     }
 
 

@@ -7,7 +7,7 @@
     <test verbose="2" preserve-order="true"
           name="D:/Automation/BBLCorpnetappAutomation/src/test/java/com/corpnet/testcases/test_Company_Transaction/testCases_RTGS_Transactions/TC_RTGS_Single_TransferByComMaker">
         <classes>
-            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_RTGS_Single_TransferByComMaker">
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_022_RTGS_Single_TransferByComMaker">
                 <methods>
                     <include name="initiateRTGS_Single_TranSuccess"/>
                 </methods>

@@ -20,7 +20,7 @@ public class TC_007_IFT_MultiToManyTransferByComMaker extends BaseTest {
                 .clickRadioMulti()
                 .clickUploadBtn()
                 .clickConfirmBtn();
-
+        Thread.sleep(1500);
         Assert.assertTrue(iftBulkTransactionByComMakerPage.hasMultiBulkTranInitiatedSuccess());
         String IFT1to1TrxReferenceNumber = iftBulkTransactionByComMakerPage.iftBatch;
         context.setAttribute("IftTrxReferenceNumber", IFT1to1TrxReferenceNumber);

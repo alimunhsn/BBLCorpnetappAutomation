@@ -22,6 +22,7 @@ public class TC_019_BEFTN_Multi_Bulk_TransferByComMaker extends BaseTest {
                         .clickRadioMulti()
                         .clickUploadBtn()
                         .clickConfirmBtn();
+        Thread.sleep(3000);
         Assert.assertTrue(eft_bulkTransactionByComMakerPage.hasBulkTranInitiatedSuccess());
         String eftTrxReferenceNumber = eft_bulkTransactionByComMakerPage.EftBatchRef;
         context.setAttribute("EftTrxReferenceNumber", eftTrxReferenceNumber);

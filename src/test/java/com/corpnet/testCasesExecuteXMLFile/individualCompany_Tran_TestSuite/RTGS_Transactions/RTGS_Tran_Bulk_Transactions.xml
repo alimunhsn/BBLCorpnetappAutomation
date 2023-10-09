@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="RTGS_Bulk_Tran">
+        <classes>
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_025_RTGS_Bulk_TransferByComMaker">
+            </class>
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_026_RTGS_TransferByComChecker">
+            </class>
+            <class name="com.corpnet.testcases.test_Company_Transaction.testCases_RTGS_Transactions.TC_027_RTGS_TransferByComApprove">
+            </class>
+        </classes>
+    </test>
+</suite>

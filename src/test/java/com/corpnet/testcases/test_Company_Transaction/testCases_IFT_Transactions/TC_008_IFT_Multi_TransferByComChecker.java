@@ -10,7 +10,7 @@ public class TC_008_IFT_Multi_TransferByComChecker extends BaseTest {
 
 
         @Test
-        public void authorizedIFT_Single_Bulk_TranShouldSuccess(ITestContext context) throws InterruptedException {
+        public void authorizedIFT_Multi_Bulk_TranShouldSuccess(ITestContext context) throws InterruptedException {
 
             String iftTranRef = (String) context.getAttribute("IftTrxReferenceNumber");
 

@@ -25,6 +25,7 @@ public class TC_018_BEFTN_Single_Bulk_Approve_TransferByComApprove extends BaseT
                         .inputTokenNumber()
                         .clickApproveTokenBtn()
                         .clickYesBtn();
+        Thread.sleep(3000);
         Assert.assertTrue(eft_transactionByComApprovePage.hasTransactionApprovedSuccess());
         System.out.println("Successfully get Approve Transaction Batch ID , Transaction Batch Id :- " + EftRef);
         MockData mockData = new MockData();

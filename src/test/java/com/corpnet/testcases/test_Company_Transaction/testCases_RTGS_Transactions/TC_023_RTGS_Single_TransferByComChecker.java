@@ -36,8 +36,8 @@ public class TC_023_RTGS_Single_TransferByComChecker extends BaseTest {
                 .searchIFTBatchId(refNo)
                 .clickAuthorizeBtn()
                 .clickSubmitBtn();
-
-        // Assert.assertTrue(rtgs_bulkTransactionPageByComChecker.hasSingleTranAuthorizedSuccess());
+        Thread.sleep(4000);
+        Assert.assertTrue(rtgsBulkTransactionPageByComChecker.hasSingleTranAuthorizedSuccess());
         System.out.println("Successfully get Transaction Id, Transaction Batch Id :- " + refNo);
 
         Thread.sleep(5000);

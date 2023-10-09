@@ -20,6 +20,7 @@ public class TC_010_IFT_Payroll_Bulk_TransferByComMaker extends BaseTest {
                         .uploadIFTFile(IftPayrollFilepath)
                         .clickUploadBtn()
                         .clickPayrollConfirmBtn();
+        Thread.sleep(1500);
         Assert.assertTrue(iftBulkTransactionByComMakerPage.hasSingleBulkTranInitiatedSuccess());
         String IFTPayrollReferenceNumber = iftBulkTransactionByComMakerPage.iftPayrollBatch;
         context.setAttribute("iftPayrollTrxReferenceNumber", IFTPayrollReferenceNumber);
