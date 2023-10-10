@@ -80,9 +80,15 @@ public class BaseTest {
     public String getOpsMakerUser() {
         return properties.getProperty("OpsMakerUser");
     }
+    public String getCheckerUsername() {
+        return properties.getProperty("CheckerUsername");
+    }
 
     public String getOpsMakerPass() {
         return properties.getProperty("OpsMakerPass");
+    }
+    public String getOpsCheckerPassword() {
+        return properties.getProperty("OpsCheckerPassword");
     }
 
     public String getTranMCUser() {
@@ -161,10 +167,14 @@ public class BaseTest {
     public String getSpAuthMakerUser() {
         return properties.getProperty("SpAuthMakerUser");
 
-    }    public String getSpAuthCheckerUser() {
+    }
+
+    public String getSpAuthCheckerUser() {
         return properties.getProperty("SpAuthCheckerUser");
 
-    }   public String getSpAuthSingApproveUser() {
+    }
+
+    public String getSpAuthSingApproveUser() {
         return properties.getProperty("SpAuthSingApproveUser");
 
     }
@@ -178,6 +188,19 @@ public class BaseTest {
         return 0;
 
         //  return properties.getProperty("selectAccount");
+
+    }
+
+    public String getCompanyName() {
+        return properties.getProperty("CompanyName");
+
+    }
+  public String getCompanyEmail() {
+        return properties.getProperty("email");
+
+    }
+  public String getCompanyCIF() {
+        return properties.getProperty("CIF");
 
     }
 
