@@ -13,6 +13,8 @@ import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.RTGS_Pages.RT
 import com.corpnet.pages.compay_Menu_Page.company_Maker_Menu_Pages.Universal_Acc_TranPages.Universal_Acc_TransferByComMakerPage;
 import com.corpnet.pages.operation_Maker_Menu_Pages.PG_001_CreateNewCompanyByMakerPage;
 import com.corpnet.pages.operation_Maker_Menu_Pages.PG_002CreateComAccountManaByMakerPage;
+import com.corpnet.pages.operation_Maker_Menu_Pages.PG_003_MemberSetupByMakerPage;
+import com.corpnet.pages.operations_Checker_Menu_Pages.CPG_002_ApproveComAccountByCheckerPage;
 import com.corpnet.pages.operations_Checker_Menu_Pages.UnauthorizedCompaniesByCheckerPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -42,6 +44,7 @@ public class HomePage extends BasePage {
         return getInstance(UnauthorizedCompaniesByCheckerPage.class);
 
     }
+
     public PG_002CreateComAccountManaByMakerPage clickCompanyAccountManageMenu() {
 
         new Actions(driver)
@@ -52,6 +55,24 @@ public class HomePage extends BasePage {
 
     }
 
+    public CPG_002_ApproveComAccountByCheckerPage clickCompanyAccountManageMenuForApprove() {
+
+        new Actions(driver)
+                .click(getWebElement(By.linkText("Company Management"))).perform();
+        getWebElement(By.cssSelector("ul li a[href$='/company_account_management']")).click();
+
+        return getInstance(CPG_002_ApproveComAccountByCheckerPage.class);
+
+    }
+
+    public PG_003_MemberSetupByMakerPage selectMemberSetupMenu() {
+        new Actions(driver)
+                .click(getWebElement(By.linkText("Company Management"))).perform();
+
+        getWebElement(By.cssSelector("div ul li a[href='/company/createSignatory']")).click();
+
+        return getInstance(PG_003_MemberSetupByMakerPage.class);
+    }
 
     public boolean hasLogoutLink() {
         return getWebElements(By.linkText("LOG OUT")).size() > 0;

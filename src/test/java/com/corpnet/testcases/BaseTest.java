@@ -195,7 +195,13 @@ public class BaseTest {
         return properties.getProperty("CompanyName");
 
     }
-  public String getCompanyEmail() {
+  public String getMemberNameA() {
+        return properties.getProperty("MemberNameA");
+
+    }  public String getMemberNameB() {
+        return properties.getProperty("MemberNameB");
+
+    }  public String getCompanyEmail() {
         return properties.getProperty("email");
 
     }
