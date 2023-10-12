@@ -15,6 +15,7 @@ import com.corpnet.pages.operation_Maker_Menu_Pages.PG_001_CreateNewCompanyByMak
 import com.corpnet.pages.operation_Maker_Menu_Pages.PG_002CreateComAccountManaByMakerPage;
 import com.corpnet.pages.operation_Maker_Menu_Pages.PG_003_MemberSetupByMakerPage;
 import com.corpnet.pages.operations_Checker_Menu_Pages.CPG_002_ApproveComAccountByCheckerPage;
+import com.corpnet.pages.operations_Checker_Menu_Pages.CPG_003_MemberApproveByCheckerSummaryPage;
 import com.corpnet.pages.operations_Checker_Menu_Pages.UnauthorizedCompaniesByCheckerPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -72,6 +73,20 @@ public class HomePage extends BasePage {
         getWebElement(By.cssSelector("div ul li a[href='/company/createSignatory']")).click();
 
         return getInstance(PG_003_MemberSetupByMakerPage.class);
+    }
+
+    public CPG_003_MemberApproveByCheckerSummaryPage clickMemberSummary() {
+        new Actions(driver)
+                .click(getWebElement(By.linkText("Company Management"))).perform();
+
+        getWebElement(By.cssSelector("div ul li a[href='/company/memberSummary']")).click();
+
+        // addTokenEl.isDisplayed();
+        //addTokenEl.click();
+
+        return getInstance(CPG_003_MemberApproveByCheckerSummaryPage.class);
+
+
     }
 
     public boolean hasLogoutLink() {

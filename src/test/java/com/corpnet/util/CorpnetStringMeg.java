@@ -9,6 +9,7 @@ public class CorpnetStringMeg {
     final static public String NewCompanyAccountUpdate="Company account updated successfully";
 
     final static public String MemberCreateSuccess="member created successfully";
+    final static public String MemberAuthorizeSuccess=" Authorized successfully";
 
 
 
