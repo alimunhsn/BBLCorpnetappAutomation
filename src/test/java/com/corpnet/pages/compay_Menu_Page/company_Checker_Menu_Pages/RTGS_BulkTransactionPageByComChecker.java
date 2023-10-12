@@ -11,7 +11,6 @@ import java.time.Duration;
 
 public class RTGS_BulkTransactionPageByComChecker extends BasePage {
 
-
     @FindBy(css = "div label input.form-control-sm")
     WebElement fillIftBatchIdEl;
 
@@ -36,18 +35,26 @@ public class RTGS_BulkTransactionPageByComChecker extends BasePage {
 
 
     public RTGS_BulkTransactionPageByComChecker searchIFTBatchId(String rtgsRefId) throws InterruptedException {
+        getWebElement(By.cssSelector("div label input.form-control-sm")).isDisplayed();
+        //iftBatchId = fillIftBatchIdEl.getText();
         System.out.println("Successfully get Transaction Id, Transaction Batch Id :- " + rtgsRefId);
         getWebElement(By.cssSelector("div label input.form-control-sm")).sendKeys(rtgsRefId);
+//        fillIftBatchIdEl.sendKeys();
         Thread.sleep(2000);
         return this;
     }
 
 
     public RTGS_BulkTransactionPageByComChecker clickAuthorizeBtn() throws InterruptedException {
+
         getWebElement(By.cssSelector("tr[class='odd'] button[type='button']")).click();
-        Thread.sleep(15000);
+        //driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(GeneralUtil.PAGE_LOAD_TIME));
+        Thread.sleep(5000);
+
         return this;
+
     }
+
     public RTGS_BulkTransactionPageByComChecker clickSubmitBtn() throws InterruptedException {
         Thread.sleep(5000);
         getWebElement(By.id("idSubmitButton")).click();
@@ -69,9 +76,11 @@ public class RTGS_BulkTransactionPageByComChecker extends BasePage {
         return this;
 
     }
+
     public boolean hasSingleTranAuthorizedSuccess() {
-        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        return getWebElement(By.cssSelector("div[aria-modal='true'] div.modal-body p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        // return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+        // return getWebElement(By.cssSelector("div.modal-body>p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.TranAuthTranComplete);
+
     }
-
 }
-

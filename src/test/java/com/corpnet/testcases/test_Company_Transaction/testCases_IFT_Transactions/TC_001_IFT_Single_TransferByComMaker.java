@@ -22,7 +22,7 @@ public class TC_001_IFT_Single_TransferByComMaker extends BaseTest {
                 .fillTrxRemarks()
                 .clickNextBtn()
                 .clickConfirmBtn();
-
+        Thread.sleep(1500);
         Assert.assertTrue(singleIFTTransactionByComMakerPage.hasSingleTranInitiatedSuccess());
 
         String SingleIftTrxReferenceNumber = singleIFTTransactionByComMakerPage.SingleIftBatch;

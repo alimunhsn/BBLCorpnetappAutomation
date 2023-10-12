@@ -121,7 +121,8 @@ public class EFT_BulkTransactionByComMakerPage extends BasePage {
     public boolean hasBulkTranInitiatedSuccess() {
 
         // return getWebElements(By.linkText("Your transaction request has been initiated successfully.")).size() > 0;
-        return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranInitiateComplete);
+     //   return getWebElement(By.xpath("(//p[@id='globalAlertBody'])[1]")).getText().trim().contains(CorpnetStringMeg.TranInitiateComplete);
+        return getWebElement(By.cssSelector("div.modal-body>p[id='globalAlertBody']")).getText().trim().contains(CorpnetStringMeg.TranInitiateComplete);
     }
 
 

@@ -24,7 +24,7 @@ public class TC_005_IFT_Single_Bulk_TransferByComChecker extends BaseTest {
             Assert.assertTrue(iftTransactionByComCheckerPage.hasSingleTranAuthorizedSuccess());
 
             System.out.println("Successfully fetched the Single IFT Ref:" + iftTranRef);
-            Thread.sleep(5000);
+            Thread.sleep(3000);
 
         }
 

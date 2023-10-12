@@ -27,9 +27,10 @@ public class RTGS_SingleTransactionByComMakerPage extends BasePage {
 
     }
 
-    public RTGS_SingleTransactionByComMakerPage fillRemarks(String remarks) {
+    public RTGS_SingleTransactionByComMakerPage fillRemarks(String remarks) throws InterruptedException {
 
-        getWebElement(By.id("trxRemarks")).click();
+        getWebElement(By.id("trxRemarks")).sendKeys(remarks);
+        Thread.sleep(1000);
         return this;
 
     }

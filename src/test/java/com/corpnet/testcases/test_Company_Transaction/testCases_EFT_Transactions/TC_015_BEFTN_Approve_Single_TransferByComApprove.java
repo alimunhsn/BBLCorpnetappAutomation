@@ -28,12 +28,13 @@ public class TC_015_BEFTN_Approve_Single_TransferByComApprove extends BaseTest {
                 .inputTokenNumber()
                 .clickApproveTokenBtn()
                 .clickYesBtn();
+       Thread.sleep(4000);
         Assert.assertTrue(eft_transactionByComApprovePage.hasTransactionApprovedSuccess());
         System.out.println("Successfully get Approve Transaction Batch ID , Transaction Batch Id :- " + eftSingleRef);
         MockData mockData=new MockData();
         mockData.updateToExcel(8,eftSingleRef);
         mockData.updateDebitAccToExcel(8,eft_transactionByComApprovePage.debitAccount);
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 
 

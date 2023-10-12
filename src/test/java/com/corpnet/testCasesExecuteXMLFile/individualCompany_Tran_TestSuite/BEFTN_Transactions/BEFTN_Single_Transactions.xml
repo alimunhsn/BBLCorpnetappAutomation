@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="IFT_Single_Tran">
+    <test verbose="2" preserve-order="true" name="EFT_Single_Tran">
         <classes>
             <class name="com.corpnet.testcases.test_Company_Transaction.testCases_EFT_Transactions.TC_013_BEFTN_Single_TransferByComMaker">
 <!--                <methods>-->

@@ -20,13 +20,14 @@ public class TC_024_RTGS_Single_TransferByComApprove extends BaseTest {
                 .searchRTGSBatchId(rtgsRef)
                 .clickApproveBtn()
                 .inputTokenNumber()
-                .clickApproveBtn()
+                .clickApproveTokenBtn()
                 .clickOkButton();
+        Thread.sleep(3000);
         Assert.assertTrue(rtgs_bulkTransactionPageByComApprover.hasRTGSSingleTranApprovedSuccess());
         MockData mockData = new MockData();
         mockData.updateToExcel(14, rtgsRef);
         mockData.updateDebitAccToExcel(14, rtgs_bulkTransactionPageByComApprover.debitAccount);
         System.out.println("Successfully get Approve Transaction Batch ID , Transaction Batch Id :- " + rtgsRef);
-        Thread.sleep(10000);
+        Thread.sleep(5000);
     }
 }

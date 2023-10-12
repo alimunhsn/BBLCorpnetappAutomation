@@ -80,9 +80,15 @@ public class BaseTest {
     public String getOpsMakerUser() {
         return properties.getProperty("OpsMakerUser");
     }
+    public String getCheckerUsername() {
+        return properties.getProperty("CheckerUsername");
+    }
 
     public String getOpsMakerPass() {
         return properties.getProperty("OpsMakerPass");
+    }
+    public String getOpsCheckerPassword() {
+        return properties.getProperty("OpsCheckerPassword");
     }
 
     public String getTranMCUser() {
@@ -147,8 +153,34 @@ public class BaseTest {
         return properties.getProperty("EFTSingleBulk");
 
     }
+
     public String getEFTMultipleBulkFile() {
         return properties.getProperty("EFTMultipleBulk");
+
+    }
+
+    public String getRTGSBulkFile() {
+        return properties.getProperty("RTGSBulk");
+
+    }
+
+    public String getSpAuthMakerUser() {
+        return properties.getProperty("SpAuthMakerUser");
+
+    }
+
+    public String getSpAuthCheckerUser() {
+        return properties.getProperty("SpAuthCheckerUser");
+
+    }
+
+    public String getSpAuthSingApproveUser() {
+        return properties.getProperty("SpAuthSingApproveUser");
+
+    }
+
+    public String getSpAuthMakerUserPass() {
+        return properties.getProperty("SpAuthMakerUserPass");
 
     }
 
@@ -156,6 +188,25 @@ public class BaseTest {
         return 0;
 
         //  return properties.getProperty("selectAccount");
+
+    }
+
+    public String getCompanyName() {
+        return properties.getProperty("CompanyName");
+
+    }
+  public String getMemberNameA() {
+        return properties.getProperty("MemberNameA");
+
+    }  public String getMemberNameB() {
+        return properties.getProperty("MemberNameB");
+
+    }  public String getCompanyEmail() {
+        return properties.getProperty("email");
+
+    }
+  public String getCompanyCIF() {
+        return properties.getProperty("CIF");
 
     }
 

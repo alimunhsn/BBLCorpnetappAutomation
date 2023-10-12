@@ -24,6 +24,7 @@ public class TC_020_BEFTN_Multi_Bulk_TransferByComChecker extends BaseTest {
                         .searchIFTBatchId(eftRef)
                         .clickAuthorizeBtn()
                         .clickSubmitBtn();
+        Thread.sleep(4000);
         Assert.assertTrue(eft_transactionByComCheckerPage.hasBulkTranAuthorizedSuccess());
         System.out.println("Successfully get Transaction Id, Transaction Batch Id :- " + eftRef);
         Thread.sleep(5000);

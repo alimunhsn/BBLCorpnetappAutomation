@@ -15,19 +15,20 @@ public class TC_027_RTGS_TransferByComApprove extends BaseTest {
         String rtgsRef = (String) context.getAttribute("rtgsTrxReferenceNumber");
         RTGS_BulkTransactionPageByComApprover rtgs_bulkTransactionPageByComApprover =
                 page.getInstance(CorpnetLoginPage.class)
-                        .doLogin(getTranMCUser(), getTranMCUserPass())
+                        .doLogin(getTranCompAppUser(), getTranCompAppUserPass())
                         .clickRTGSApproveQueue()
                         .searchRTGSBatchId(rtgsRef)
                         .clickApproveBtn()
                         .inputTokenNumber()
-                        .clickApproveBtn()
+                        .clickApproveTokenBtn()
                         .clickOkButton();
+        Thread.sleep(10000);
         Assert.assertTrue(rtgs_bulkTransactionPageByComApprover.hasRTGSSingleTranApprovedSuccess());
 
         MockData mockData = new MockData();
         mockData.updateToExcel(15, rtgsRef);
         mockData.updateDebitAccToExcel(15, rtgs_bulkTransactionPageByComApprover.debitAccount);
         System.out.println("Successfully get Approve Transaction Batch ID , Transaction Batch Id :- " + rtgsRef);
-        Thread.sleep(10000);
+        Thread.sleep(2000);
     }
 }

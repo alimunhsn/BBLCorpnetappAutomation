@@ -21,7 +21,7 @@ public class TC_012_IFT_Payroll_Approve_TransferByComSignatory extends BaseTest 
                 .inputTokenNumber()
                 .clickApproveTokenBtn()
                 .clickYesBtn();
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         Assert.assertTrue(ift_transactionByComApprovePage.hasSingleTranApprovedSuccess());
         System.out.println("Successfully get Approve Transaction Batch ID , Transaction Batch Id :- " + iftRef);
         MockData mockData = new MockData();
